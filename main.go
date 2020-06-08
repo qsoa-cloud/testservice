@@ -15,21 +15,23 @@ func main() {
 	// Provides gRPC service
 	pb.RegisterTestServer(service.GetGrpcServer(), &grpc.Server{})
 
-	// Prepare gRPC client
-	var client pb.TestClient
+	// Provides HTTP service
+	httpHandler := &http.Handler{}
+	service.HandleHttp("/", httpHandler)
+
 	service.OnInit(func() error {
+		// Prepare gRPC client
+
 		conn, err := qgrpc.Dial("qcloud://testservice/")
 		if err != nil {
 			log.Fatalf("Cannot dial grpc: %v", err)
 		}
 
-		client = pb.NewTestClient(conn)
+		client := pb.NewTestClient(conn)
+		httpHandler.Client = client
 
 		return nil
 	})
-
-	// Provides HTTP service
-	service.HandleHttp("/", &http.Handler{Client: client})
 
 	// Run service
 	service.Run()
