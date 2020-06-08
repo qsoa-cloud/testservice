@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = ".;pb";
+
+service Test {
+  rpc Sum (SumReq) returns (SumResp);
+  rpc PingPong (stream Ping) returns (stream Pong);
+}
+
+message SumReq {
+  int64 n1 = 1;
+  int64 n2 = 2;
+}
+
+message SumResp {
+  int64 sum = 1;
+}
+
+message Ping {
+  string text = 1;
+}
+
+message Pong {
+  string text = 1;
+}
