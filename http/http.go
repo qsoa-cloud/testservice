@@ -48,5 +48,11 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	_, err = h.db.ExecContext(r.Context(), `INSERT INTO log VALUES (?, ?, ?)`, n1, n2, resp.Sum)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	_, _ = fmt.Fprintf(w, "Sum = %d", resp.Sum)
 }
