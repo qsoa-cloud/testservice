@@ -95,7 +95,7 @@
   branch = "newgen"
   name = "gopkg.qsoa.cloud/service"
   packages = [".","qgrpc","qhttp","qmysql","qmysql/internal/pb"]
-  revision = "72b78529f86d380b5b043a5dfa05e49259e84cfe"
+  revision = "0acdb6d3d94ed52a0a993c037ecf7b30f2888f6c"
 
 [[projects]]
   branch = "master"
