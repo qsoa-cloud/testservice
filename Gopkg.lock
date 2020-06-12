@@ -8,6 +8,12 @@
   version = "v1.0.1"
 
 [[projects]]
+  name = "github.com/go-sql-driver/mysql"
+  packages = ["."]
+  revision = "17ef3dd9d98b69acec3e85878995ada9533a9370"
+  version = "v1.5.0"
+
+[[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
   revision = "d04d7b157bb510b1e0c10132224b616ac0e26b17"
@@ -46,8 +52,8 @@
 [[projects]]
   name = "github.com/prometheus/procfs"
   packages = [".","internal/fs","internal/util"]
-  revision = "fce2797c0a7014c95e72ad044cf057299f801660"
-  version = "v0.1.0"
+  revision = "9d2ce6b66e29005fbf51122f14a354308d5d57b2"
+  version = "v0.1.1"
 
 [[projects]]
   branch = "master"
@@ -59,7 +65,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["internal/unsafeheader","unix","windows"]
-  revision = "6fdc65e7d9800cc59998e8ac0d9406a20ff5f399"
+  revision = "226ff32320da7b90d0b5bc2365f4e359c466fb78"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -71,7 +77,7 @@
   branch = "master"
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
-  revision = "7c474a2e34828bdcbfd56bccd302a058cae3ecec"
+  revision = "44ba362f84c10c5cbc73633f05fc5d72b18554fb"
 
 [[projects]]
   name = "google.golang.org/grpc"
@@ -88,8 +94,8 @@
 [[projects]]
   branch = "newgen"
   name = "gopkg.qsoa.cloud/service"
-  packages = [".","grpc"]
-  revision = "802d776545c9340daaa193f1fde867063c425f2c"
+  packages = [".","qgrpc","qhttp","qmysql","qmysql/internal/pb"]
+  revision = "72b78529f86d380b5b043a5dfa05e49259e84cfe"
 
 [[projects]]
   branch = "master"
@@ -100,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "29c3ca1e8eb73d5916cc58a27435dfc70346c22875c0492d3a66b435875cf596"
+  inputs-digest = "83ad6eb223d4dd510709bf737e2ccaabb654fc1f345c487bf31f8a79c6a3363d"
   solver-name = "gps-cdcl"
   solver-version = 1

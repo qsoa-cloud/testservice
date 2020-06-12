@@ -12,11 +12,11 @@ import (
 
 type Server struct{}
 
-func (s Server) Sum(ctx context.Context, req *pb.SumReq) (*pb.SumResp, error) {
+func (Server) Sum(ctx context.Context, req *pb.SumReq) (*pb.SumResp, error) {
 	return &pb.SumResp{Sum: req.N1 + req.N2}, nil
 }
 
-func (s Server) PingPong(server pb.Test_PingPongServer) error {
+func (Server) PingPong(server pb.Test_PingPongServer) error {
 	for {
 		msg, err := server.Recv()
 		if err != nil {
