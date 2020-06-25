@@ -28,8 +28,9 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		_, err := h.client.Error(r.Context(), &pb.ErrorReq{})
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
 		}
-		w.Write([]byte("No error"))
+		_, _ = w.Write([]byte("No error"))
 		return
 	}
 
