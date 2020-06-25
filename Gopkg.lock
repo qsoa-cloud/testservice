@@ -15,7 +15,7 @@
 
 [[projects]]
   name = "github.com/golang/protobuf"
-  packages = ["proto","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
+  packages = ["proto","protoc-gen-go/descriptor","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
   revision = "d04d7b157bb510b1e0c10132224b616ac0e26b17"
   version = "v1.4.2"
 
@@ -52,50 +52,50 @@
 [[projects]]
   name = "github.com/prometheus/procfs"
   packages = [".","internal/fs","internal/util"]
-  revision = "9d2ce6b66e29005fbf51122f14a354308d5d57b2"
-  version = "v0.1.1"
+  revision = "3a900613711866765af641f387dad41b639dbdc4"
+  version = "v0.1.3"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["http/httpguts","http2","http2/hpack","idna","internal/timeseries","trace"]
-  revision = "627f9648deb96c27737b83199d44bb5c1010cbcf"
+  revision = "4c5254603344ea4a8ae4bed7e296a9588303e14f"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["internal/unsafeheader","unix","windows"]
-  revision = "226ff32320da7b90d0b5bc2365f4e359c466fb78"
+  revision = "ed371f2e16b4b305ee99df548828de367527b76b"
 
 [[projects]]
   name = "golang.org/x/text"
   packages = ["collate","collate/build","internal/colltab","internal/gen","internal/language","internal/language/compact","internal/tag","internal/triegen","internal/ucd","language","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
-  revision = "342b2e1fbaa52c93f31447ad2c6abc048c63e475"
-  version = "v0.3.2"
+  revision = "23ae387dee1f90d29a23c0e87ee0b46038fbed0e"
+  version = "v0.3.3"
 
 [[projects]]
   branch = "master"
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
-  revision = "44ba362f84c10c5cbc73633f05fc5d72b18554fb"
+  revision = "64a14ca9d1ad0ae85b3b3dc0791d7148a09ecde9"
 
 [[projects]]
   name = "google.golang.org/grpc"
-  packages = [".","attributes","backoff","balancer","balancer/base","balancer/roundrobin","binarylog/grpc_binarylog_v1","codes","connectivity","credentials","credentials/internal","encoding","encoding/proto","grpclog","internal","internal/backoff","internal/balancerload","internal/binarylog","internal/buffer","internal/channelz","internal/envconfig","internal/grpclog","internal/grpcrand","internal/grpcsync","internal/grpcutil","internal/resolver/dns","internal/resolver/passthrough","internal/status","internal/syscall","internal/transport","keepalive","metadata","naming","peer","resolver","serviceconfig","stats","status","tap"]
-  revision = "754ee590a4f386d0910d887f3b8776354042260b"
-  version = "v1.29.1"
+  packages = [".","attributes","backoff","balancer","balancer/base","balancer/grpclb/state","balancer/roundrobin","binarylog/grpc_binarylog_v1","codes","connectivity","credentials","credentials/internal","encoding","encoding/proto","grpclog","internal","internal/backoff","internal/balancerload","internal/binarylog","internal/buffer","internal/channelz","internal/envconfig","internal/grpclog","internal/grpcrand","internal/grpcsync","internal/grpcutil","internal/resolver/dns","internal/resolver/passthrough","internal/serviceconfig","internal/status","internal/syscall","internal/transport","keepalive","metadata","peer","reflection","reflection/grpc_reflection_v1alpha","resolver","serviceconfig","stats","status","tap"]
+  revision = "1f47ba4663831f2a9c28a62a7de3ff8bc45078f0"
+  version = "v1.30.0"
 
 [[projects]]
   name = "google.golang.org/protobuf"
-  packages = ["encoding/prototext","encoding/protowire","internal/descfmt","internal/descopts","internal/detrand","internal/encoding/defval","internal/encoding/messageset","internal/encoding/tag","internal/encoding/text","internal/errors","internal/fieldnum","internal/fieldsort","internal/filedesc","internal/filetype","internal/flags","internal/genname","internal/impl","internal/mapsort","internal/pragma","internal/set","internal/strs","internal/version","proto","reflect/protoreflect","reflect/protoregistry","runtime/protoiface","runtime/protoimpl","types/known/anypb","types/known/durationpb","types/known/timestamppb"]
-  revision = "5c3dd7024aed895adfe053f26b5a479e991cbca9"
-  version = "v1.24.0"
+  packages = ["encoding/prototext","encoding/protowire","internal/descfmt","internal/descopts","internal/detrand","internal/encoding/defval","internal/encoding/messageset","internal/encoding/tag","internal/encoding/text","internal/errors","internal/fieldsort","internal/filedesc","internal/filetype","internal/flags","internal/genid","internal/impl","internal/mapsort","internal/pragma","internal/set","internal/strs","internal/version","proto","reflect/protoreflect","reflect/protoregistry","runtime/protoiface","runtime/protoimpl","types/descriptorpb","types/known/anypb","types/known/durationpb","types/known/timestamppb"]
+  revision = "3f7a61f89bb6813f89d981d1870ed68da0b3c3f1"
+  version = "v1.25.0"
 
 [[projects]]
-  branch = "newgen"
+  branch = "master"
   name = "gopkg.qsoa.cloud/service"
   packages = [".","qgrpc","qhttp","qmysql","qmysql/internal/pb"]
-  revision = "0acdb6d3d94ed52a0a993c037ecf7b30f2888f6c"
+  revision = "04e611cc2fa621750bfc5fa553d1a3f7949a9809"
 
 [[projects]]
   branch = "master"
@@ -106,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "83ad6eb223d4dd510709bf737e2ccaabb654fc1f345c487bf31f8a79c6a3363d"
+  inputs-digest = "1fb1f43a7d22a5742e1a0d5b74e666a0e1a22d4aafd03cdfec609ff65ccf5aad"
   solver-name = "gps-cdcl"
   solver-version = 1
