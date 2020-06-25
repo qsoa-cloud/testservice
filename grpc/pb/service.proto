@@ -5,6 +5,7 @@ option go_package = ".;pb";
 service Test {
   rpc Sum (SumReq) returns (SumResp);
   rpc PingPong (stream Ping) returns (stream Pong);
+  rpc Error (ErrorReq) returns (ErrorResp);
 }
 
 message SumReq {
@@ -23,3 +24,6 @@ message Ping {
 message Pong {
   string text = 1;
 }
+
+message ErrorReq {}
+message ErrorResp {}

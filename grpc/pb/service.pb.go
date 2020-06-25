@@ -225,6 +225,82 @@ func (x *Pong) GetText() string {
 	return ""
 }
 
+type ErrorReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ErrorReq) Reset() {
+	*x = ErrorReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_service_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ErrorReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ErrorReq) ProtoMessage() {}
+
+func (x *ErrorReq) ProtoReflect() protoreflect.Message {
+	mi := &file_service_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ErrorReq.ProtoReflect.Descriptor instead.
+func (*ErrorReq) Descriptor() ([]byte, []int) {
+	return file_service_proto_rawDescGZIP(), []int{4}
+}
+
+type ErrorResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ErrorResp) Reset() {
+	*x = ErrorResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_service_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ErrorResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ErrorResp) ProtoMessage() {}
+
+func (x *ErrorResp) ProtoReflect() protoreflect.Message {
+	mi := &file_service_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ErrorResp.ProtoReflect.Descriptor instead.
+func (*ErrorResp) Descriptor() ([]byte, []int) {
+	return file_service_proto_rawDescGZIP(), []int{5}
+}
+
 var File_service_proto protoreflect.FileDescriptor
 
 var file_service_proto_rawDesc = []byte{
@@ -236,12 +312,16 @@ var file_service_proto_rawDesc = []byte{
 	0x03, 0x52, 0x03, 0x73, 0x75, 0x6d, 0x22, 0x1a, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x12,
 	0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65,
 	0x78, 0x74, 0x22, 0x1a, 0x0a, 0x04, 0x50, 0x6f, 0x6e, 0x67, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65,
-	0x78, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x32, 0x3e,
-	0x0a, 0x04, 0x54, 0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x03, 0x53, 0x75, 0x6d, 0x12, 0x07, 0x2e,
-	0x53, 0x75, 0x6d, 0x52, 0x65, 0x71, 0x1a, 0x08, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x73, 0x70,
-	0x12, 0x1c, 0x0a, 0x08, 0x50, 0x69, 0x6e, 0x67, 0x50, 0x6f, 0x6e, 0x67, 0x12, 0x05, 0x2e, 0x50,
-	0x69, 0x6e, 0x67, 0x1a, 0x05, 0x2e, 0x50, 0x6f, 0x6e, 0x67, 0x28, 0x01, 0x30, 0x01, 0x42, 0x06,
-	0x5a, 0x04, 0x2e, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x78, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x22, 0x0a,
+	0x0a, 0x08, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x65, 0x71, 0x22, 0x0b, 0x0a, 0x09, 0x45, 0x72,
+	0x72, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x32, 0x5e, 0x0a, 0x04, 0x54, 0x65, 0x73, 0x74, 0x12,
+	0x18, 0x0a, 0x03, 0x53, 0x75, 0x6d, 0x12, 0x07, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x71, 0x1a,
+	0x08, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x12, 0x1c, 0x0a, 0x08, 0x50, 0x69, 0x6e,
+	0x67, 0x50, 0x6f, 0x6e, 0x67, 0x12, 0x05, 0x2e, 0x50, 0x69, 0x6e, 0x67, 0x1a, 0x05, 0x2e, 0x50,
+	0x6f, 0x6e, 0x67, 0x28, 0x01, 0x30, 0x01, 0x12, 0x1e, 0x0a, 0x05, 0x45, 0x72, 0x72, 0x6f, 0x72,
+	0x12, 0x09, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x52, 0x65, 0x71, 0x1a, 0x0a, 0x2e, 0x45, 0x72,
+	0x72, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x42, 0x06, 0x5a, 0x04, 0x2e, 0x3b, 0x70, 0x62, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -256,20 +336,24 @@ func file_service_proto_rawDescGZIP() []byte {
 	return file_service_proto_rawDescData
 }
 
-var file_service_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_service_proto_goTypes = []interface{}{
-	(*SumReq)(nil),  // 0: SumReq
-	(*SumResp)(nil), // 1: SumResp
-	(*Ping)(nil),    // 2: Ping
-	(*Pong)(nil),    // 3: Pong
+	(*SumReq)(nil),    // 0: SumReq
+	(*SumResp)(nil),   // 1: SumResp
+	(*Ping)(nil),      // 2: Ping
+	(*Pong)(nil),      // 3: Pong
+	(*ErrorReq)(nil),  // 4: ErrorReq
+	(*ErrorResp)(nil), // 5: ErrorResp
 }
 var file_service_proto_depIdxs = []int32{
 	0, // 0: Test.Sum:input_type -> SumReq
 	2, // 1: Test.PingPong:input_type -> Ping
-	1, // 2: Test.Sum:output_type -> SumResp
-	3, // 3: Test.PingPong:output_type -> Pong
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: Test.Error:input_type -> ErrorReq
+	1, // 3: Test.Sum:output_type -> SumResp
+	3, // 4: Test.PingPong:output_type -> Pong
+	5, // 5: Test.Error:output_type -> ErrorResp
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -329,6 +413,30 @@ func file_service_proto_init() {
 				return nil
 			}
 		}
+		file_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ErrorReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ErrorResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -336,7 +444,7 @@ func file_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_service_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -364,6 +472,7 @@ const _ = grpc.SupportPackageIsVersion6
 type TestClient interface {
 	Sum(ctx context.Context, in *SumReq, opts ...grpc.CallOption) (*SumResp, error)
 	PingPong(ctx context.Context, opts ...grpc.CallOption) (Test_PingPongClient, error)
+	Error(ctx context.Context, in *ErrorReq, opts ...grpc.CallOption) (*ErrorResp, error)
 }
 
 type testClient struct {
@@ -414,10 +523,20 @@ func (x *testPingPongClient) Recv() (*Pong, error) {
 	return m, nil
 }
 
+func (c *testClient) Error(ctx context.Context, in *ErrorReq, opts ...grpc.CallOption) (*ErrorResp, error) {
+	out := new(ErrorResp)
+	err := c.cc.Invoke(ctx, "/Test/Error", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TestServer is the server API for Test service.
 type TestServer interface {
 	Sum(context.Context, *SumReq) (*SumResp, error)
 	PingPong(Test_PingPongServer) error
+	Error(context.Context, *ErrorReq) (*ErrorResp, error)
 }
 
 // UnimplementedTestServer can be embedded to have forward compatible implementations.
@@ -429,6 +548,9 @@ func (*UnimplementedTestServer) Sum(context.Context, *SumReq) (*SumResp, error) 
 }
 func (*UnimplementedTestServer) PingPong(Test_PingPongServer) error {
 	return status.Errorf(codes.Unimplemented, "method PingPong not implemented")
+}
+func (*UnimplementedTestServer) Error(context.Context, *ErrorReq) (*ErrorResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Error not implemented")
 }
 
 func RegisterTestServer(s *grpc.Server, srv TestServer) {
@@ -479,6 +601,24 @@ func (x *testPingPongServer) Recv() (*Ping, error) {
 	return m, nil
 }
 
+func _Test_Error_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ErrorReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TestServer).Error(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Test/Error",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TestServer).Error(ctx, req.(*ErrorReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Test_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "Test",
 	HandlerType: (*TestServer)(nil),
@@ -486,6 +626,10 @@ var _Test_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Sum",
 			Handler:    _Test_Sum_Handler,
+		},
+		{
+			MethodName: "Error",
+			Handler:    _Test_Error_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

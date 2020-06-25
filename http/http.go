@@ -24,6 +24,15 @@ func New(client pb.TestClient, db *sql.DB) *handler {
 }
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.FormValue("err") != "" {
+		_, err := h.client.Error(r.Context(), &pb.ErrorReq{})
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
+		w.Write([]byte("No error"))
+		return
+	}
+
 	n1, err := strconv.ParseInt(r.FormValue("n1"), 10, 64)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)

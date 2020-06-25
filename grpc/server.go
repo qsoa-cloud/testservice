@@ -3,6 +3,7 @@ package grpc
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"google.golang.org/grpc/status"
@@ -11,6 +12,8 @@ import (
 )
 
 type Server struct{}
+
+var _ pb.TestServer = &Server{}
 
 func (Server) Sum(ctx context.Context, req *pb.SumReq) (*pb.SumResp, error) {
 	return &pb.SumResp{Sum: req.N1 + req.N2}, nil
@@ -33,4 +36,8 @@ func (Server) PingPong(server pb.Test_PingPongServer) error {
 	}
 
 	return nil
+}
+
+func (s Server) Error(ctx context.Context, req *pb.ErrorReq) (*pb.ErrorResp, error) {
+	return nil, fmt.Errorf("test error")
 }
